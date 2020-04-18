@@ -48,10 +48,10 @@ services:
 #              arguments:
 #                  - '%env(BOTONARIOUMBOT_TOKEN)%'
 #                  - '@botonarioum.handler.botonarioum'
-#            - method: add
-#              arguments:
-#                  - '%env(BASHIM_TOKEN)%'
-#                  - '@botonarioum.handler.bashim'
+            - method: add
+              arguments:
+                  - '%env(BASHIM_TOKEN)%'
+                  - '@botonarioum.handler.bashim'
             - method: add
               arguments:
                   - '%env(ZAYCEV_NET_1)%'
