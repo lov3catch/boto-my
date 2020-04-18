@@ -52,7 +52,7 @@ class UpdateChannel implements EventSubscriberInterface
      */
     public static function getSubscribedEvents()
     {
-        return [ActivityEvent::EVENT_NAME => 'onAction'];
+        return [];
     }
 
     public function onAction(ActivityEvent $event): void

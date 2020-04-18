@@ -50,7 +50,7 @@ class LogAddGroupInfo implements EventSubscriberInterface
      */
     public static function getSubscribedEvents()
     {
-        return [AddedUserInGroupEvent::EVENT_NAME => 'onAction'];
+        return [];
     }
 
     public function onAction(AddedUserInGroupEvent $event): void

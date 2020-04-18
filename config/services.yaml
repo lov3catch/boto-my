@@ -40,9 +40,6 @@ services:
     botonarioum.handler.music_dealer:
         class: App\Botonarioum\Bots\Handlers\MusicDealerHandler
 
-    botonarioum.handler.moderator:
-        class: App\Botonarioum\Bots\Handlers\ModeratorHandler
-
     # Bots
     App\Botonarioum\Bots\BotContainer:
         autowire: true
@@ -71,7 +68,3 @@ services:
               arguments:
                   - '%env(ZAYCEV_NET_4)%'
                   - '@botonarioum.handler.music_dealer'
-            - method: add
-              arguments:
-                  - '%env(MODERATOR_1)%'
-                  - '@botonarioum.handler.moderator'
