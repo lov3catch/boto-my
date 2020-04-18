@@ -6,6 +6,7 @@ services:
         volumes: 
             - .:/var/www/boto
         restart: on-failure
+        tty: true
     redis:
         container_name: boto_redis
         image: redis

@@ -56,22 +56,22 @@ class DefaultController extends AbstractController
         return new JsonResponse($storage->client()->get($key));
     }
 
-    /**
-     * @Route("/qwerty", name="qwerty")
-     * @param EntityManagerInterface $entityManager
-     * @return JsonResponse
-     */
-    public function qweqweqwr(EntityManagerInterface $entityManager)
-    {
-        $entity = $entityManager->getRepository(ModeratorGroupOwners::class)->findOneBy(['group_id' => -1001208545789]);
-
-        $entity->setIsActive(false);
-
-        $entityManager->persist($entity);
-        $entityManager->flush();
-
-        return new JsonResponse([]);
-    }
+//    /**
+//     * @Route("/qwerty", name="qwerty")
+//     * @param EntityManagerInterface $entityManager
+//     * @return JsonResponse
+//     */
+//    public function qweqweqwr(EntityManagerInterface $entityManager)
+//    {
+//        $entity = $entityManager->getRepository(ModeratorGroupOwners::class)->findOneBy(['group_id' => -1001208545789]);
+//
+//        $entity->setIsActive(false);
+//
+//        $entityManager->persist($entity);
+//        $entityManager->flush();
+//
+//        return new JsonResponse([]);
+//    }
 
     /**
      * @Route("/phpinfo", name="phpinfo")
@@ -82,15 +82,15 @@ class DefaultController extends AbstractController
         echo phpinfo();
     }
 
-    /**
-     * @Route("/group_ids", name="group_ids")
-     * @param ModeratorGroupRepository $groupRepository
-     * @return JsonResponse
-     */
-    public function groups(ModeratorGroupRepository $groupRepository): JsonResponse
-    {
-        return $this->json(array_map(function (ModeratorGroup $group) {
-            return $group->getGroupId();
-        }, $groupRepository->findAll()));
-    }
+//    /**
+//     * @Route("/group_ids", name="group_ids")
+//     * @param ModeratorGroupRepository $groupRepository
+//     * @return JsonResponse
+//     */
+//    public function groups(ModeratorGroupRepository $groupRepository): JsonResponse
+//    {
+//        return $this->json(array_map(function (ModeratorGroup $group) {
+//            return $group->getGroupId();
+//        }, $groupRepository->findAll()));
+//    }
 }
