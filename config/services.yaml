@@ -44,10 +44,10 @@ services:
     App\Botonarioum\Bots\BotContainer:
         autowire: true
         calls:
-#            - method: add
-#              arguments:
-#                  - '%env(BOTONARIOUMBOT_TOKEN)%'
-#                  - '@botonarioum.handler.botonarioum'
+            - method: add
+              arguments:
+                  - '%env(BOTONARIOUMBOT_TOKEN)%'
+                  - '@botonarioum.handler.botonarioum'
             - method: add
               arguments:
                   - '%env(BASHIM_TOKEN)%'
