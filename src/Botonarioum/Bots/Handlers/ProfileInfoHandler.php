@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Botonarioum\Bots\Handlers;
 
+use App\Botonarioum\Bots\Handlers\Pipes\MusicDealer\BotonarioumPipe;
+use App\Botonarioum\Bots\Handlers\Pipes\MusicDealer\DonatePipe;
 use App\Botonarioum\Bots\Handlers\Pipes\ProfileInfoHandler\MessagePipe;
 use App\Botonarioum\Bots\Handlers\Pipes\ProfileInfoHandler\StartPipe;
 use Formapro\TelegramBot\Bot;
@@ -13,9 +15,11 @@ class ProfileInfoHandler extends AbstractHandler
 {
     private $pipes = [];
 
-    public function __construct(StartPipe $startPipe, MessagePipe $messagePipe)
+    public function __construct(StartPipe $startPipe, DonatePipe $donatePipe, BotonarioumPipe $botonarioumPipe, MessagePipe $messagePipe)
     {
         $this->pipes[] = $startPipe;
+        $this->pipes[] = $donatePipe;
+        $this->pipes[] = $botonarioumPipe;
         $this->pipes[] = $messagePipe;
     }
 

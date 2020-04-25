@@ -15,7 +15,7 @@ class MessagePipe extends BaseMessagePipe
     {
         $user = $update->getMessage()->getFrom();
 
-        $userInfo = 'ID: ' . $user->getId();
+        $userInfo = 'ID: ' . (string)$user->getId() . PHP_EOL;
         $userInfo .= 'First name: ' . (string)$user->getFirstName() . PHP_EOL;
         $userInfo .= 'Last name: ' . (string)$user->getLastName() . PHP_EOL;
         $userInfo .= 'User name: ' . (string)$user->getUsername() . PHP_EOL;
