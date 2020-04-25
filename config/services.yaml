@@ -40,6 +40,9 @@ services:
     botonarioum.handler.music_dealer:
         class: App\Botonarioum\Bots\Handlers\MusicDealerHandler
 
+    botonarioum.handler.profile_info:
+        class: App\Botonarioum\Bots\Handlers\ProfileInfoHandler
+
     # Bots
     App\Botonarioum\Bots\BotContainer:
         autowire: true
@@ -72,3 +75,7 @@ services:
               arguments:
                   - '%env(ZAYCEV_NET_5)%'
                   - '@botonarioum.handler.music_dealer'
+            - method: add
+              arguments:
+                  - '%env(PROFILE_INFO_TOKEN)%'
+                  - '@botonarioum.handler.profile_info'
