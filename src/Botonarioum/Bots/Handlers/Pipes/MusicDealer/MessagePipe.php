@@ -105,7 +105,7 @@ class MessagePipe extends BaseMessagePipe
                 'reply_markup' => ['inline_keyboard' => [$markup]]
             ];
 
-            $bot->
+//            $bot->
 
              $url = sprintf('https://api.telegram.org/bot%s/%s', $bot->getToken(), 'editMessageText');
 
