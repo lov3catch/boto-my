@@ -95,12 +95,13 @@ class MessagePipe extends BaseMessagePipe
             $this->logger->error('-----6-----');
 
             $message = $bot->editMessageText($newMessage);
-            var_dump($message);
+//            var_dump($message);
 
             $this->logger->error('-----7-----');
         } catch (\Throwable $exception) {
+//            {"ok":false,"error_code":400,"description":"Bad Request: field \"inline_keyboard\" of the InlineKeyboardMarkup must be an Array"} [] []
             $this->logger->error('--------------------------' . PHP_EOL);
-            $this->logger->error($exception->getResponse()->getBody());
+//            $this->logger->error($exception->getResponse()->getBody());
             $this->logger->error($exception->getMessage());
             $this->logger->error($exception->getFile());
             $this->logger->error($exception->getLine());
