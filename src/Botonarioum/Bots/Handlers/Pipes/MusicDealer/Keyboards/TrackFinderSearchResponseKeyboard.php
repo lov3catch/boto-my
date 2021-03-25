@@ -37,7 +37,7 @@ class TrackFinderSearchResponseKeyboard
         $keyboard = array_merge($keyboard, $contentPart);
         $keyboard[] = $pagerPart;
 
-//        var_dump($keyboard);die;
+        var_dump($keyboard);die;
 
         return new InlineKeyboardMarkup($keyboard);
 
