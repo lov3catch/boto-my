@@ -56,6 +56,7 @@ class TrackFinderSearchResponseKeyboard
             $title = mb_convert_encoding($title, 'UTF-8', 'UTF-8');
             // todo: Реализовать класс для работы с провайдерами
 //            $callbackData = implode('::', ['zn', $item[1]]);
+            return [$title, $item[1]];
             return [InlineKeyboardButton::withCallbackData($title, $item[1])];
         }, $response->getData());
     }
@@ -88,7 +89,7 @@ class TrackFinderSearchResponseKeyboard
                 $text,
                 (Uuid::uuid1())->toString());
 
-            $paginationKeyboard[] = InlineKeyboardButton::withCallbackData('◀️', $prevCallbackData);
+            $paginationKeyboard[] = ['◀️', $prevCallbackData];
         }
 
         if ($response->getPager()->hasNext()) {
@@ -98,11 +99,9 @@ class TrackFinderSearchResponseKeyboard
                 $text,
                 (Uuid::uuid1())->toString());
 
-            $paginationKeyboard[] = InlineKeyboardButton::withCallbackData('▶️', $nextCallbackData);
+            $paginationKeyboard[] = ['▶️', $nextCallbackData];
         }
 
         return $paginationKeyboard;
-
-        $keyboard[] = $paginationKeyboard;
     }
 }
