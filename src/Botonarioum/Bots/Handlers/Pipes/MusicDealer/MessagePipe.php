@@ -11,6 +11,7 @@ use Formapro\TelegramBot\EditMessageText;
 use Formapro\TelegramBot\SendMessage;
 use Formapro\TelegramBot\Update;
 use Psr\Log\LoggerInterface;
+use function Formapro\Values\get_values;
 
 class MessagePipe extends BaseMessagePipe
 {
@@ -80,6 +81,7 @@ class MessagePipe extends BaseMessagePipe
             var_dump('------------------------------------');
 
             $markup = $this->trackFinderSearchResponseKeyboard->build($searchResponse, $update);
+            $this->logger->error(get_values($markup));
 
             $newMessage = EditMessageText::withChatId(
                 '🎶 Результат поиска: ' . mb_convert_encoding(substr($update->getMessage()->getText(), 0, 20), 'UTF-8', 'UTF-8'),
