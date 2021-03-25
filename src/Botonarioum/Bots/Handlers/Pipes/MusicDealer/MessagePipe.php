@@ -95,8 +95,8 @@ class MessagePipe extends BaseMessagePipe
 
             $this->logger->error('-----5-----');
 
-            $newMessage->setReplyMarkup($markup);
-            $this->logger->error(json_encode(get_values($newMessage)));
+//            $newMessage->setReplyMarkup($markup);
+//            $this->logger->error(json_encode(get_values($newMessage)));
 
             $this->logger->error('-----6-----');
 
