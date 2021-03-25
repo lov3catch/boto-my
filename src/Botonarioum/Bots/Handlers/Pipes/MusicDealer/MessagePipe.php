@@ -105,6 +105,8 @@ class MessagePipe extends BaseMessagePipe
                 'reply_markup' => ['inline_keyboard' => [$markup]]
             ];
 
+            $this->logger->error(json_encode($data));
+
 //            $bot->
             $text = '🎶 Результат поиска: ' . mb_convert_encoding(substr($update->getMessage()->getText(), 0, 20), 'UTF-8', 'UTF-8');
             $chatId = $sendSearchMessage->getMessageId();
