@@ -27,7 +27,7 @@ class TrackFinderSearchResponseKeyboard
         $this->storage = $storage;
     }
 
-    public function build(TrackFinderSearchResponse $response, Update $update): InlineKeyboardMarkup
+    public function build(TrackFinderSearchResponse $response, Update $update)
     {
         $pagerPart = $this->attachPagerPart($response, $update);
         $contentPart = $this->attachContentPart($response, $update);
