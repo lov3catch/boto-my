@@ -124,7 +124,7 @@ class MessagePipe extends BaseMessagePipe
         } catch (\Throwable $exception) {
 //            {"ok":false,"error_code":400,"description":"Bad Request: field \"inline_keyboard\" of the InlineKeyboardMarkup must be an Array"} [] []
             $this->logger->error('--------------------------' . PHP_EOL);
-//            $this->logger->error($exception->getResponse()->getBody());
+            $this->logger->error($exception->getResponse()->getBody());
             $this->logger->error($exception->getMessage());
             $this->logger->error($exception->getFile());
             $this->logger->error($exception->getLine());
