@@ -33,9 +33,13 @@ class TrackFinderSearchResponseKeyboard
         $contentPart = $this->attachContentPart($response, $update);
 
         $keyboard = [];
-        $keyboard[] = $pagerPart;
+        if ($pagerPart !== []) {
+            $keyboard[] = $pagerPart;
+        }
         $keyboard = array_merge($keyboard, $contentPart);
-        $keyboard[] = $pagerPart;
+        if ($pagerPart !== []) {
+            $keyboard[] = $pagerPart;
+        }
 
         return $keyboard;
 
