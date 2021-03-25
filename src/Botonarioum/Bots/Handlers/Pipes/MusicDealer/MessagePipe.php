@@ -111,7 +111,7 @@ class MessagePipe extends BaseMessagePipe
             $text = '🎶 Результат поиска: ' . mb_convert_encoding(substr($update->getMessage()->getText(), 0, 20), 'UTF-8', 'UTF-8');
             $chatId = $update->getMessage()->getChat()->getId();
 
-            $url = sprintf('https://api.telegram.org/bot%s/%s?chat_id=%s&text=%s', $bot->getToken(), 'editMessageText', $chatId, $text);
+            $url = sprintf('https://api.telegram.org/bot%s/%s?chat_id=%s&text=%s', $bot->getToken(), 'sendMessage', $chatId, $text);
 
             $this->client->post($url, [
                 'json' => $data,
