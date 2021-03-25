@@ -37,6 +37,8 @@ class TrackFinderSearchResponseKeyboard
         $keyboard = array_merge($keyboard, $contentPart);
         $keyboard[] = $pagerPart;
 
+        return $keyboard;
+
         return new InlineKeyboardMarkup($keyboard);
 
         $this->attachPagerPart($keyboard, $response, $update);

@@ -30,11 +30,14 @@ class MessagePipe extends BaseMessagePipe
      */
     private $trackFinderSearchResponseKeyboard;
 
+    private $client;
+
     public function __construct(LoggerInterface $logger, TrackFinderSearchResponseKeyboard $trackFinderSearchResponseKeyboard)
     {
         $this->logger = $logger;
         $this->trackFinderService = new TrackFinderService();
         $this->trackFinderSearchResponseKeyboard = $trackFinderSearchResponseKeyboard;
+        $this->client = new \GuzzleHttp\Client();
     }
 
     public function processing(Bot $bot, Update $update): bool
@@ -97,7 +100,20 @@ class MessagePipe extends BaseMessagePipe
 
             $this->logger->error('-----6-----');
 
-            $message = $bot->editMessageText($newMessage);
+
+            $data = [
+                'reply_markup' => ['inline_keyboard' => [$markup]]
+            ];
+
+            $bot->
+
+             $url = sprintf('https://api.telegram.org/bot%s/%s', $bot->getToken(), 'editMessageText');
+
+            $this->client->post($url, [
+                'json' => $data,
+            ]);
+
+//            $message = $bot->editMessageText($newMessage);
 //            var_dump($message);
 
             $this->logger->error('-----7-----');
